@@ -1,5 +1,9 @@
 #root {
-  padding-top: 100px;
+  background-image: url('../src/assets/images/bg.jpg');
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,12 +13,23 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-image: url('../images/bg.jpg');
   background-size: cover;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
   padding: 20px 20px 50px;
+
+}
+
+.overlay {
+  position: fixed;
+  z-index: -0;
+  background-image: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -26,11 +41,23 @@ main {
   font-family: 'Press Start 2P', cursive;
 }
 
+.title {
+  z-index: 1;
+  padding-bottom: 40px;
+  font-size: larger;
+  border-radius: 12;
+}
+
+.box-green {
+  z-index: 1;
+}
+
 header {
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #00875F;
   font-size: 1.2em;
   width: 100%;
   max-width: 800px;
@@ -40,6 +67,7 @@ header {
 }
 
 .grid {
+  padding-bottom: 20px;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -87,4 +115,19 @@ header {
 .disabled-Card {
   filter: saturate(0);
   opacity: 0.5;
+}
+
+.reiniciar {
+
+  z-index: 9;
+  background-color: #00875F;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.reiniciar:hover {
+  background-color: #05aa78;
 }

@@ -1,7 +1,11 @@
+import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+
 export function Game() {
 
 
   const grid = document.querySelector('.grid')
+  const timer = document.querySelector('.timer')
+
 
   const characters = [
     'beth',
@@ -16,6 +20,24 @@ export function Game() {
     'scroopy',
   ]
 
+  function finalConfet() {
+    confetti({
+      particleCount: 2000,
+      angle: 90,
+      spread: 360,
+      startVelocity: 40,
+      decay: 0.9,
+      gravity: 0.1,
+      origin: { y: 0 },
+      // colors: ["#f00", "#0f0", "#00f"],
+      shapes: ["square", "circle"],
+      ticks: 200,
+      zIndex: 100,
+      disableForReducedMotion: false
+    })
+
+  }
+
   const createElement = (tag, className) => {
     const element = document.createElement(tag)
     element.className = className
@@ -29,35 +51,28 @@ export function Game() {
     const disabledCards = document.querySelectorAll('.reveal-card');
     console.log(disabledCards.length)
 
-    if (disabledCards.length == 20) {
-      alert('Parabéns,! ');
+    if (disabledCards.length == 2) {
+      finalConfet()
+      setTimeout(() => {
+        clearInterval(loop)
+        alert(`Parabéns, Você venceu! seu tempo foi de ${timer.innerHTML} segundos`);
+
+      }, 500)
     }
   }
-
 
   const checkCards = () => {
     const firstCharacter = firstCard.getAttribute('data-character')
     const secondCharacter = secondCard.getAttribute('data-character')
-
-
     // Acertou a carta
     if (firstCharacter === secondCharacter) {
 
       firstCard.firstChild.classList.add('disabled-Card')
       secondCard.firstChild.classList.add('disabled-Card')
 
-
-
       firstCard = '';
       secondCard = '';
-
-
-
       checkEndGame();
-
-      console.log(checkEndGame());
-
-
 
     } else {
 
@@ -92,25 +107,18 @@ export function Game() {
       secondCard = target.parentNode
 
       checkCards()
-
     }
-
-
   }
 
   const createCard = (character) => {
     const card = createElement('div', 'card')
     const front = createElement('div', 'face front')
     const back = createElement('div', 'face back')
-
-
     front.style.backgroundImage = `url('../src/assets/images/${character}.png')`;
 
     card.appendChild(front)
     card.appendChild(back)
-
     grid.appendChild(card)
-
     card.addEventListener('click', revealcard)
     card.setAttribute('data-character', character)
 
@@ -128,5 +136,21 @@ export function Game() {
       // console.log(character)
     });
   }
+
+  let loop;
+  let currentTime;
+
+  const StartTimer = () => {
+    loop = setInterval(() => {
+      currentTime = +timer.innerHTML
+      timer.innerHTML = currentTime + 1;
+    }, 1000)
+  }
+  window.onload = () => {
+
+
+    StartTimer()
+  }
+
   loadGame()
 }
