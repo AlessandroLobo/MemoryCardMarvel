@@ -51,7 +51,7 @@ export function Game() {
     const disabledCards = document.querySelectorAll('.reveal-card');
     console.log(disabledCards.length)
 
-    if (disabledCards.length == 2) {
+    if (disabledCards.length == 20) {
       finalConfet()
       setTimeout(() => {
         clearInterval(loop)
