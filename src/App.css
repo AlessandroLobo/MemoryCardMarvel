@@ -1,5 +1,5 @@
 #root {
-  background-image: url('../public/images/bg.jpg');
+  background-image: url('./images/bg.jpg');
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -103,7 +103,7 @@ header {
 }
 
 .back {
-  background-image: url('../public/images/back.png');
+  background-image: url('./images/back.png');
 
   backface-visibility: hidden;
 }
