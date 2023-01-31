@@ -98,7 +98,7 @@ export function Game() {
     if (firstCard === '') {
       if (contadorStart == 0) {
         StartTimer()
-        console.log("testando o contador---")
+        // console.log("testando o contador---")
         contadorStart = 1
       }
       target.parentNode.classList.add('reveal-card')
