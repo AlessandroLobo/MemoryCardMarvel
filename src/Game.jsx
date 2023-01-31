@@ -48,7 +48,7 @@ export function Game() {
 
   const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.reveal-card');
-    console.log(disabledCards.length)
+    // console.log(disabledCards.length)
 
     if (disabledCards.length == 20) {
       finalConfet()
