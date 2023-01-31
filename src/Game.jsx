@@ -95,7 +95,7 @@ export function Game() {
     }
 
     if (firstCard === '') {
-
+      StartTimer()
       target.parentNode.classList.add('reveal-card')
       firstCard = target.parentNode
 
@@ -144,10 +144,9 @@ export function Game() {
       timer.innerHTML = currentTime + 1;
     }, 1000)
   }
+
   window.onload = () => {
-
-
-    StartTimer()
+   
   }
 
   loadGame()
