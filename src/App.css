@@ -38,7 +38,7 @@ main {
   box-sizing: border-box;
   list-style: none;
   border: none;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .title {
@@ -103,7 +103,7 @@ header {
 }
 
 .back {
-  background-image: url('/static/images/back.png');
+  background-image: url('/static/images/back.jpg');
 
   backface-visibility: hidden;
 }

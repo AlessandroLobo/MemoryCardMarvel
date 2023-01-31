@@ -2,22 +2,20 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
 export function Game() {
 
-
   const grid = document.querySelector('.grid')
   const timer = document.querySelector('.timer')
 
-
   const characters = [
-    'beth',
-    'jerry',
-    'jessica',
-    'morty',
-    'pessoa-passaro',
-    'pickle-rick',
-    'rick',
-    'summer',
-    'meeseeks',
-    'scroopy',
+    'america',
+    'cavaleiro_lua',
+    'ciclop',
+    'doutor_octo',
+    'fera',
+    'ghost_rider',
+    'homem_ferro',
+    'hulk',
+    'tempestade',
+    'venon',
   ]
 
   function finalConfet() {
