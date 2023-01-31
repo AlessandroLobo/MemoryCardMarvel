@@ -2,9 +2,6 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { Game } from './Game'
 
-
-
-
 function App() {
   const [count, setCount] = useState(0)
 
@@ -12,16 +9,11 @@ function App() {
     Game();
   }, [])
 
-
-
-
-
   function reiniciarJogo() {
     // Aqui você coloca o código que deseja executar quando o botão for clicado
     // por exemplo, recarregar a página
     window.location.reload();
   }
-
 
   return (
     <>

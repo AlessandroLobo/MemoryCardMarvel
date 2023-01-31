@@ -2,6 +2,7 @@ import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
 export function Game() {
 
+  let contadorStart = ''
   const grid = document.querySelector('.grid')
   const timer = document.querySelector('.timer')
 
@@ -95,7 +96,11 @@ export function Game() {
     }
 
     if (firstCard === '') {
-      StartTimer()
+      if (contadorStart == 0) {
+        StartTimer()
+        console.log("testando o contador---")
+        contadorStart = 1
+      }
       target.parentNode.classList.add('reveal-card')
       firstCard = target.parentNode
 
@@ -146,7 +151,7 @@ export function Game() {
   }
 
   window.onload = () => {
-   
+
   }
 
   loadGame()
