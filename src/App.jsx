@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { Game } from './Game'
 
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -32,6 +33,7 @@ function App() {
         <button className='reiniciar' onClick={reiniciarJogo}>Reiniciar Jogo</button>
 
       </main>
+
     </>
   )
 
